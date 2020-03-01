@@ -179,6 +179,21 @@ class RequireBlood(Resource):
 
         return final, 201
 
+class UpdateDonation(Resource):
+    def post(self):
+        # authentication
+        key = dict(request.form)['key']
+        if key is None or key != app.config['KEY']:
+            abort(401)
+
+        email, d_date = dict(request.form)['email'], dict(request.form)['date']
+
+        db.collection('donor').document(f'{email}').update({
+            'date': d_date
+        })
+
+        return "OK", 201
+
 # url route for API
 api.add_resource(Createdonor, '/createdonor')
 #api.add_resource(Createhospital, '/createhospital')
@@ -186,6 +201,7 @@ api.add_resource(Find, '/find')
 api.add_resource(Notify, '/notify')
 api.add_resource(RequestBlood, '/requestblood')
 api.add_resource(RequireBlood, '/requireblood')
+api.add_resource(UpdateDonation, '/updatedonation')
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=int(os.environ.get('PORT', 8080)))
