@@ -1,3 +1,6 @@
 *.vscode/
-private/
+*__pycache__/
+# private contains the firebase client key
+*private/
+# app_secrets contains the FLASK, GMAIL and FAST2SMS key
 *app_secrets.py
