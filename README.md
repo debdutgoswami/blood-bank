@@ -9,3 +9,9 @@ This is a Flask project which contain the APIs built for `HACKNPITCH`, a hackath
 1. Flask-RESTful
 
 2. Flask-CORS
+
+3. geopy
+
+4. firebase-admin
+
+---
