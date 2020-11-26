@@ -4,3 +4,5 @@
 *private/
 # app_secrets contains the FLASK, GMAIL and FAST2SMS key
 *app_secrets.py
+*env/
+.env
