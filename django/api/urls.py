@@ -15,11 +15,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from .core.views import DonorRetrieveView, DonorCreateView
+from .core.views import DonorRetrieveView, DonorCreateView, RequestTicketCreateView, RequestTicketRetrieveView
 
 urlpatterns = [
     path("admin/", admin.site.urls),
     # api/v1/donor?lat=23.0568&lon=28.9875&distance=5
     path("api/v1/donor", DonorRetrieveView.as_view()),
     path("api/v1/donor/", DonorCreateView.as_view()),
+    path("api/v1/ticket/", RequestTicketCreateView.as_view()),
+    path("api/v1/ticket", RequestTicketRetrieveView.as_view()),
 ]

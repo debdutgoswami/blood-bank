@@ -63,22 +63,19 @@ class Donor(models.Model):
 class RequestTicket(models.Model):
     address = models.OneToOneField(Address, models.CASCADE)
 
-    SEX = [
-        ("M", "Male"),
-        ("F", "Female"),
-        ("O", "Others"),
-    ]
+    class BLOODGROUP(BloodGroup, models.TextChoices):
+        pass
+
     phone_regex = RegexValidator(
         regex=r"^\+?1?\d{9,15}$",
         message="Phone number must be entered in the format: '+999999999'. Up to 15 digits allowed.",
     )
     name = models.CharField("Name", max_length=40, blank=False)
-    sex = models.CharField(max_length=1, choices=SEX, blank=True)
+    email = models.EmailField("Email", max_length=40, blank=True)
     phone = models.CharField(
-        "Phone Number", validators=[phone_regex], max_length=16, blank=True
+        "Phone Number", validators=[phone_regex], max_length=16, blank=False
     )
     bloodgroup = models.CharField("Blood Group", max_length=3, blank=False)
-    age = models.PositiveSmallIntegerField("Age", blank=True)
     created_on = models.DateField("Created On", auto_now=True, blank=False)
 
     class Meta:

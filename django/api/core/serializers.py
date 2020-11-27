@@ -43,3 +43,26 @@ class DonorSerializer(serializers.ModelSerializer):
         # for relations, we need to separately create them in table
         address_obj = Address.objects.create(**address_input)
         return self.Meta.model.objects.create(address=address_obj, **validated_data)
+
+
+class RequestTicketSerializer(serializers.ModelSerializer):
+    address = AddressSerializer()
+
+    class Meta:
+        model = RequestTicket
+        fields = [
+            "name",
+            "email",
+            "phone",
+            "bloodgroup",
+            "address"
+        ]
+
+    def create(self, validated_data: dict):
+        """
+        Creates Request Tickets
+        """
+        address_input = validated_data.pop("address")
+        # for relations, we need to separately create them in table
+        address_obj = Address.objects.create(**address_input)
+        return self.Meta.model.objects.create(address=address_obj, **validated_data)
