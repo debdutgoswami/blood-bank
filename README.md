@@ -6,7 +6,9 @@
     <p align="center">
       All-in-one portal for Blood Donation 🩸
       <br />
+      <br />
       It helps people in emergency to find donors quicker
+      <br />
       <br />
       <a href="https://github.com/debdutgoswami/blood-bank/issues/new?assignees=&labels=&template=bug_report.md&title=">Report Bug</a>
       ·
