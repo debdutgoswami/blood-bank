@@ -1,28 +1,41 @@
+<br />
+<p align="center">
+    <img src="assets/favicon.png" width="350px" alt="Logo" />
+    <h3 align="center">Blood Bank</h3>
+    <br />
+    <p align="center">
+      All-in-one portal for Blood Donation 🩸
+      <br />
+      <br />
+      <a href="https://github.com/debdutgoswami/blood-bank/issues/new">Report Bug</a>
+      ·
+      <a href="https://github.com/debdutgoswami/blood-bank/issues/new">Request Feature</a>
+    </p>
+</p>
+
+
+
 # Blood Bank
 
-This is a Flask project which contain the APIs built for `HACKNPITCH`, a hackathon conducted by `Jadavpur University`. We worked on the `Blood Bank` problem statement.
+This project contains the APIs built for `HACKNPITCH`, a hackathon conducted by `Jadavpur University`. We worked on the `Blood Bank` problem statement.
 
 ---
 
-## Libraries used
+## Technologies used
 
-1. Flask-RESTful
+1. Flask
 
-2. Flask-CORS
+2. React
 
-3. geopy
+3. [Flutter](https://github.com/flametron/Delhihacks-Bloodbankapp) 
 
-4. firebase-admin
+4. Google Cloud Platform (GCP)
+
+5. Django (added later, has the same functionalities)
 
 ---
 
 ## UPDATE
 
-The entire code is later on refactored and implemented using `Django RESTful`
+The entire code is later on refactored and implemented using `Django Rest Framework (DRF)`
 The previous flask code is moved into `flask` folder.
-
-### Configuration for Running Django database migrations on linux
-
-1. sudo apt-get install binutils libproj-dev gdal-bin
-
-2. sudo apt-get install libsqlite3-mod-spatialite
