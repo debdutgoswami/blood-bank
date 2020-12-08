@@ -61,7 +61,7 @@ The previous flask code is moved into `flask` folder.
 
 ### Installation (Django)
 
-1. Clone the repository and go to `flask` folder
+1. Clone the repository and go to `django` folder
 
    ```
    https://github.com/debdutgoswami/blood-bank.git
